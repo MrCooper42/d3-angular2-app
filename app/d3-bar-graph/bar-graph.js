@@ -5,6 +5,10 @@ const height = 300;
 const padding = 100;
 const barPadding = 5;
 
+d3.json('matches1.json', function(data) {
+  console.log(data.matches[0], "first data point");
+})
+
 d3.select('body')
 .append('h1')
 .text('Let\'s build a bar graph!')
@@ -16,7 +20,7 @@ const svg = d3.select('body')
 .style('padding', padding)
 
 d3.json('salesData.json', function(data) {
-
+  console.log(data, "data", data[0], "data first index");
   let xScale = d3.scaleBand()
     .domain(data.map((d) => d.day))
     .range([0, width])
